@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import Sidebar from './components/sidebar';
 import Homepage from './components/homepage';
+import Header from './components/header';
 
 function App() {
 
@@ -15,11 +16,9 @@ function App() {
 
   return (
     <div className="App relative">
-      
-           <Sidebar toggleSidebar={toggleSidebar} showSidebar={showSidebar}/> 
-      
-            <Homepage toggleSidebar={toggleSidebar} showSidebar={showSidebar}/>
-
+      <Header toggleSidebar={toggleSidebar} showSidebar={showSidebar}/>
+      <Sidebar toggleSidebar={toggleSidebar} showSidebar={showSidebar}/> 
+      <Homepage toggleSidebar={toggleSidebar} showSidebar={showSidebar}/>
     </div>
   );
 }

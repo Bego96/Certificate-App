@@ -1,4 +1,4 @@
-import { GiHamburgerMenu} from 'react-icons/gi';
+import {RxHamburgerMenu} from 'react-icons/rx';
 import { BiSolidDownArrow, BiSolidUpArrow} from 'react-icons/bi';
 import { useState } from 'react';
 
@@ -12,7 +12,7 @@ const HomeNavigation = () => {
         <div className="text-blue-600 pl-8">
             <div className="flex items-center w-full justify-between" onClick={() => setOpenList(!openList)}>
                 <div className='flex items-center'>
-                    <GiHamburgerMenu color='#3b82f6' size={24}/>
+                    <RxHamburgerMenu color='#3b82f6' size={24}/>
                     <p className="ml-2">Machine learning</p>
                 </div>
                 {

@@ -3,6 +3,7 @@ import HomeNavigation from './homeNavigation';
 import { useState  } from 'react';
 import Home from './home';
 import { AiOutlineClose } from 'react-icons/ai';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const Sidebar = (props) => {
 

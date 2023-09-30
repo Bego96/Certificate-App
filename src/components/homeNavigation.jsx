@@ -1,6 +1,7 @@
 import {RxHamburgerMenu} from 'react-icons/rx';
 import { BiSolidDownArrow, BiSolidUpArrow} from 'react-icons/bi';
 import { useState } from 'react';
+import { Outlet, Link } from "react-router-dom";
 
 const HomeNavigation = () => {
 
@@ -10,7 +11,7 @@ const HomeNavigation = () => {
 
     return (
         <div className="text-blue-600 pl-8">
-            <div className="flex items-center w-full justify-between" onClick={() => setOpenList(!openList)}>
+            <div className="flex items-center w-full justify-between cursor-pointer" onClick={() => setOpenList(!openList)}>
                 <div className='flex items-center'>
                     <RxHamburgerMenu color='#3b82f6' size={24}/>
                     <p className="ml-2">Machine learning</p>
@@ -22,9 +23,9 @@ const HomeNavigation = () => {
             {
                 openList ? 
                 <ul className="pl-8 mt-8">
-                <li>Example 1</li>
-                <li>Example 2</li>
-                <li>Example 3</li>
+                    <Link to="/Certificate-overview"><li className='cursor-pointer my-2'>Example 1</li></Link>
+                    <li className='cursor-pointer my-2'>Example 2</li>
+                    <li className='cursor-pointer my-2'>Example 3</li>
                 </ul> : null
             }
             

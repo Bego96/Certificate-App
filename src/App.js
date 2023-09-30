@@ -2,8 +2,9 @@
 import { useState } from 'react';
 import './App.css';
 import Sidebar from './components/sidebar';
-import Homepage from './components/homepage';
 import Header from './components/header';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainContainer from './components/mainContainer';
 
 function App() {
 
@@ -17,10 +18,15 @@ function App() {
   return (
     <div className="App relative">
       <Header toggleSidebar={toggleSidebar} showSidebar={showSidebar}/>
-      <Sidebar toggleSidebar={toggleSidebar} showSidebar={showSidebar}/> 
-      <Homepage toggleSidebar={toggleSidebar} showSidebar={showSidebar}/>
+      <BrowserRouter>
+        <Sidebar toggleSidebar={toggleSidebar} showSidebar={showSidebar}/> 
+       
+          <MainContainer toggleSidebar={toggleSidebar} showSidebar={showSidebar}/>
+        
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+

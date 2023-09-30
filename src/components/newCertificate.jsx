@@ -5,7 +5,7 @@ const NewCertificate = () => {
     return (
         <>
         <div className='mb-10'>
-            <h2>New certificate</h2>
+            <h2 className='text-2xl'>New certificate</h2>
         </div>
         <div className='w-[full] tablet:w-[80%] laptop:w-[55%] desktop:w-[40%]'>
             <div>

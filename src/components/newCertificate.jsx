@@ -1,9 +1,14 @@
 import {BiSearch} from 'react-icons/bi'
 import {IoClose} from 'react-icons/io5'
+import {IoIosArrowRoundBack} from 'react-icons/io'
+import { Outlet, Link } from "react-router-dom";
 
 const NewCertificate = () => {
     return (
         <>
+        <div className='mb-10'>
+         <Link to="/Certificate-overview"><IoIosArrowRoundBack size={55} className='mb-10 cursor-pointer '/></Link>
+        </div>
         <div className='mb-10'>
             <h2 className='text-2xl'>New certificate</h2>
         </div>

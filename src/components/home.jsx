@@ -3,7 +3,7 @@ import{ AiFillHome} from 'react-icons/ai'
 import { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 
-const Home = () => {
+const Home = (props) => {
 
     const [showHomeNav, setShowHomeNav] = useState(true);
 
@@ -14,7 +14,7 @@ const Home = () => {
                     <AiFillHome color='#3b82f6' size={20}/><span className="ml-2 text-blue-500 text-lg">Start</span>
                 </div>
             </Link>
-            {showHomeNav ? <HomeNavigation /> : null}
+            {showHomeNav ? <HomeNavigation toggleSidebar={props.toggleSidebar}/> : null}
         </div>
     )
 }

@@ -3,7 +3,7 @@ import { BiSolidDownArrow, BiSolidUpArrow} from 'react-icons/bi';
 import { useState } from 'react';
 import { Outlet, Link } from "react-router-dom";
 
-const HomeNavigation = () => {
+const HomeNavigation = (props) => {
 
     const [openList, setOpenList] = useState(false);
 
@@ -23,9 +23,9 @@ const HomeNavigation = () => {
             {
                 openList ? 
                 <ul className="pl-8 mt-8">
-                    <Link to="/Certificate-overview"><li className='cursor-pointer my-2'>Example 1</li></Link>
-                    <li className='cursor-pointer my-2'>Example 2</li>
-                    <li className='cursor-pointer my-2'>Example 3</li>
+                    <Link to="/Certificate-overview"><li className='cursor-pointer my-2' onClick={() => props.toggleSidebar()}>Example 1</li></Link>
+                    <li className='cursor-pointer my-2' onClick={() => props.toggleSidebar()}>Example 2</li>
+                    <li className='cursor-pointer my-2' onClick={() => props.toggleSidebar()}>Example 3</li>
                 </ul> : null
             }
             

@@ -63,7 +63,7 @@ const CertificateOverview = () => {
 
     return (
         
-		<div class="w-[100%] relative">
+		<div class="w-[100%] relative box-border mobile:px-4 mobile:py-10 laptop:p-10">
 			{
 				openEditForm[0] ? <EditRecordForm recordId={openEditForm[1]} closeEdit={closeEdit}/> : null
 			}

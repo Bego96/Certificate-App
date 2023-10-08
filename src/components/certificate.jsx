@@ -45,9 +45,7 @@ const Certificate = (props) => {
 			<td class="p-2 mobile:p-4 mobile:w-1/4">{props.certificateType}</td>
 			<td class="p-2 mobile:p-4 mobile:w-1/4">{props.validFrom}</td>
 			<td class="p-2 mobile:p-4 mobile:w-1/4">{props.validTo}</td>
-			{
-
-			}
+			
 		</tr>
     )
 }

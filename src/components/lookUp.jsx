@@ -9,20 +9,20 @@ const SearchCriteria = () => {
     return (
         <div className='border'>
             <form className=''>
-                    <div className='flex justify-between'>
-                        <div className='w-1/3 mx-2'>
+                    <div className='grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 p-2 tablet:p-0'>
+                        <div className='tablet:mx-2'>
                             <label for="name">Supplier name</label>
                             <div className='h-10 w-full'>
                                 <input type="text" className='h-full border w-full' name="name" />
                             </div>
                         </div>
-                        <div className='w-1/3 mx-2'>
+                        <div className='tablet:mx-2'>
                             <label for="index">Supplier index</label>
                             <div className='h-10 w-full'>
                                 <input type="text" className='h-full border w-full' name="index" />
                             </div>
                         </div>
-                        <div className='w-1/3 mx-2'>
+                        <div className='tablet:mx-2'>
                             <label for="city">Supplier city</label>
                             <div className='h-10 w-full'>
                                 <input type="text" className='h-full border w-full' name="city" />
@@ -121,7 +121,8 @@ const LookUp = (props) => {
     }
 
     return (
-        <div className='absolute top-36 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 bg-white w-full border p-1'>
+        <div className='z-40 absolute top-0 left-0 w-full bg-slate-200 h-screen  block bg-opacity-50'>
+        <div className='bg-white w-full tablet:w-[80%] laptop:w-[55%] desktop:w-[40%] border p-1 mx-auto mt-[5%] border-slate-300'>
             <div className='flex justify-between items-center bg-slate-100 border border-slate-300 p-2'>
                 <h2>Search for supplies</h2>
                 <AiOutlineClose size={20} onClick={() => props.openingLookUp()} className='cursor-pointer'/>
@@ -147,6 +148,7 @@ const LookUp = (props) => {
                 </div>
                 
             </div>
+        </div>
         </div>
     )
 }

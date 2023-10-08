@@ -2,24 +2,41 @@ import {BiSearch} from 'react-icons/bi'
 import {IoClose} from 'react-icons/io5'
 import {IoIosArrowRoundBack} from 'react-icons/io'
 import { Outlet, Link } from "react-router-dom";
+import { useState } from 'react';
+import { AiOutlineClose } from 'react-icons/ai';
+import LookUp from './lookUp';
 
 const NewCertificate = () => {
+
+    const [openLookUp, setOpenLookUp] = useState(false);
+
+
+    const openingLookUp = () => {
+        setOpenLookUp(!openLookUp);
+    }
+
+
+
     return (
         <>
+        <div className='w-[full] tablet:w-[80%] laptop:w-[55%] desktop:w-[40%] mx-auto'>
         <div className='mb-10'>
          <Link to="/Certificate-overview"><IoIosArrowRoundBack size={55} className='mb-10 cursor-pointer '/></Link>
         </div>
         <div className='mb-10'>
             <h2 className='text-2xl'>New certificate</h2>
         </div>
-        <div className='w-[full] tablet:w-[80%] laptop:w-[55%] desktop:w-[40%]'>
+        <div className='w-[full] relative'>
+        {
+            openLookUp ? <LookUp openingLookUp={openingLookUp}/> : null
+        }
             <div>
                 <form>
                     <div className='w-full mb-4'>
                         <label for="supplier">Supplier</label>
                         <div className='flex items-center h-10'>
                             <input type="text" name="supplier" className='w-full h-full border-t-[1px] border-b-[1px] border-l-[1px]' />
-                            <span className='p-[11px] box-border bg-slate-100 border-b-[1px] border-l-[1px] border-t-[1px] cursor-pointer'><BiSearch className=''/></span>
+                            <span className='p-[11px] box-border bg-slate-100 border-b-[1px] border-l-[1px] border-t-[1px] cursor-pointer' onClick={() => openingLookUp()}><BiSearch className=''/></span>
                             <span className='p-[11px] bg-slate-100 border-[1px] cursor-pointer'><IoClose className='' /></span>
                         </div>
                     </div>
@@ -48,6 +65,7 @@ const NewCertificate = () => {
             <div>
 
             </div>
+        </div>
         </div>
         </>
     )

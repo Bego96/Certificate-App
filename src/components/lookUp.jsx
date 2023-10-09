@@ -5,7 +5,11 @@ import Supplier from './Supplier';
 
 // SEARCH CRITERIA COMPONENT 
 
-const SearchCriteria = () => {
+const SearchCriteria = (props) => {
+
+
+    
+
     return (
         <div className='border'>
             <form className=''>
@@ -69,6 +73,7 @@ const SupplierList = () => {
         console.log(id)
     }
 
+
     return (
         <>
         <table class="text-slate-600 block text-left w-[100%] overflow-x-auto p-2">
@@ -108,6 +113,25 @@ const SupplierList = () => {
 
 const LookUp = (props) => {
 
+    const [users, setUsers] = useState([
+		{	
+			id: 1,
+			name: "Simon",
+			firstName: "Zwolfer",
+            userId: "ZWOELF",
+            department: "ITM/FP",
+            plant: "096"
+		},
+		{
+			id: 2,
+			name: "Wolfgang",
+			firstName: "Stark",
+            userId: "WOLFST",
+            department: "ITM/FP",
+            plant: "094"
+		}
+	])
+
     const [searchCriteriaVisible, setSearchCriteriaVisible] = useState(false);
     const [supplierListVisible, setSupplierListVisible] = useState(false);
 
@@ -118,6 +142,10 @@ const LookUp = (props) => {
 
     const toggleSupplierList = () => {
         setSupplierListVisible(!supplierListVisible);
+    }
+
+    const searchUser = () => {
+        console.log("im search")
     }
 
     return (
@@ -134,7 +162,7 @@ const LookUp = (props) => {
                 }
                     <h2 className='ml-4'>Search criteria</h2>
                 </div>
-                {searchCriteriaVisible && <SearchCriteria />}
+                {searchCriteriaVisible && <SearchCriteria searchUser={searchUser}/>}
             </div>
             <div className='p-4'>
                 <div className='bg-blue-400 text-white p-2 flex items-center cursor-pointer' onClick={toggleSupplierList}>
@@ -144,7 +172,7 @@ const LookUp = (props) => {
                     <h2 className='ml-4'>Supplier list</h2>
                 </div>
                 <div className='border-b border-l border-r'>
-                    {supplierListVisible && <SupplierList />}
+                    {supplierListVisible && <SupplierList users={users}/>}
                 </div>
                 
             </div>

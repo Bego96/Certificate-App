@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { IoIosSettings, } from 'react-icons/io';
 
 
-const Person = (props) => {
+const Participant = (props) => {
 
     const toLowerCs = props.name;
     const lower = toLowerCs.toLowerCase()
@@ -19,21 +19,14 @@ const Person = (props) => {
 
    
    useEffect(() => {
-    const element = document.querySelector(`#${elementId}`);
+
+   
+        document.querySelector(`#${elementId}`).addEventListener('click', () => {
+            document.querySelector(`#${radioId}`).checked = true;
+        });
     
-    // Function to handle the click event
-    const clickHandler = () => {
-        document.querySelector(`#${radioId}`).checked = true;
-    };
-
-    // Add the event listener
-    element.addEventListener('click', clickHandler);
-
-    // Remove the event listener in the cleanup function
-    return () => {
-        element.removeEventListener('click', clickHandler);
-    };
-}, []);
+        
+   },[]);
 
     return (
         <>
@@ -41,14 +34,12 @@ const Person = (props) => {
                 <td class="p-2 mobile:p-4 mobile:w-10 relative">
                     <input type="radio" id={radioId} name="person" value={props.name}/>
                 </td>
-                <td class="p-2 mobile:p-4 mobile:w-1/4">{props.name}</td>
-                <td class="p-2 mobile:p-4 mobile:w-1/4">{props.firstName}</td>
-                <td class="p-2 mobile:p-4 mobile:w-1/4">{props.userId}</td>
+                <td class="p-2 mobile:p-4 mobile:w-1/4">{props.name + ", " + props.firstName + " " +(props.plant)}</td>
                 <td class="p-2 mobile:p-4 mobile:w-1/4">{props.department}</td>
-                <td class="p-2 mobile:p-4 mobile:w-1/4">{props.plant}</td>
+                <td class="p-2 mobile:p-4 mobile:w-1/4">{props.email}</td>
             </tr>
         </>
     )
 }
 
-export default Person;
+export default Participant;
